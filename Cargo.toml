@@ -16,3 +16,11 @@ libc = "0.2.26"
 
 [target.'cfg(target_os = "hermit")'.dependencies]
 hermit-abi = "0.3.0"
+
+[features]
+defaults = []
+axstd = ["dep:axconfig"]
+
+[dependencies]
+# Hard coded dependency for arceos
+axconfig = { path = "../../modules/axconfig", optional = true }
